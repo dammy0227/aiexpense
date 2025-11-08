@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// ✅ Replace with your deployed backend URL
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // ✅ replace with deployed backend if needed
+  baseURL: "https://aiexpense-frh7.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 
