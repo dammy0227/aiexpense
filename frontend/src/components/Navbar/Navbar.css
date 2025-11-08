@@ -1,0 +1,91 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #1f2937; /* dark text for desktop */
+  position: relative;
+  z-index: 1001;
+  width: 100%;
+  background-color: transparent; /* no background on large screens */
+  transition: background-color 0.3s ease;
+}
+
+/* Mobile: add background color + fixed navbar */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #2563eb;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    height: 60px; /* fixed height for spacing reference */
+  }
+
+  /* Add spacing below the navbar so content doesn't hide under it */
+  body {
+    padding-top: 60px; /* match navbar height */
+    margin-bottom: 10px; /* extra breathing space */
+  }
+}
+
+/* Hamburger button */
+.hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Navbar right (user info + logout) */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+.logout-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #1e40af;
+}
+
+/* Adjust button color for mobile (since navbar is blue) */
+@media (max-width: 768px) {
+  .logout-btn {
+    background-color: white;
+    color: #2563eb;
+  }
+
+  .logout-btn:hover {
+    background-color: #f3f4f6;
+  }
+
+  .navbar-right {
+    gap: 0.5rem;
+  }
+}

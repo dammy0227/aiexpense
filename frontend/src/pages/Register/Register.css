@@ -1,0 +1,267 @@
+/* ================================
+   General Page Setup
+================================ */
+.register-container {
+   height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ================================
+   Navbar
+================================ */
+.nav {
+  padding: 20px 60px;
+  background-color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* ================================
+   Main Section
+================================ */
+.register-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 60px 100px;
+  gap: 60px;
+
+  /* Background image and dark overlay */
+  background:
+    radial-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLZmGAK4TkiOZUlgoZy8UcFwnk8c6r3skNLw&s");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ================================
+   Info Section (Text Side)
+================================ */
+.info-section {
+  flex: 1;
+  max-width: 60%;
+}
+
+.info-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  color: #f1f5f9;
+  margin-bottom: 16px !important;
+  font-weight: 300;
+}
+
+.info-section .highlight {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+/* ================================
+   Glass Form Styling
+================================ */
+.register-form {
+  flex: 1;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 45px rgba(37, 99, 235, 0.25);
+}
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ================================
+   Inputs
+================================ */
+.register-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.register-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.register-form input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+}
+
+/* ================================
+   Buttons
+================================ */
+.register-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.register-form button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  transform: translateY(-2px);
+}
+
+.register-form button:disabled {
+  background: rgba(96, 165, 250, 0.4);
+  cursor: not-allowed;
+}
+
+/* ================================
+   Error & Links
+================================ */
+.error {
+  color: #f87171;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #e2e8f0;
+}
+
+.login-text a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   Responsive Design
+================================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .register-content {
+    padding: 40px 50px;
+    gap: 40px;
+  }
+
+  .info-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .info-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .register-content {
+    flex-direction: column;
+    padding: 30px 20px; /* reduce vertical padding */
+    gap: 15px; /* reduce space between text and form */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info-section {
+    max-width: 100%;
+     margin-bottom: 10px;
+  }
+
+  .info-section h1 {
+    font-size: 2rem;
+  }
+
+  .info-section p {
+    font-size: 1rem;
+  }
+
+  .register-form {
+    width: 90%;
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .nav {
+    padding: 16px 24px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+  .register-content {
+    padding: 30px 16px;
+  }
+
+  .info-section h1 {
+    font-size: 1.6rem;
+  }
+
+  .info-section p {
+    font-size: 0.95rem;
+  }
+
+  .register-form {
+    padding: 25px 18px;
+    border-radius: 14px;
+  }
+}

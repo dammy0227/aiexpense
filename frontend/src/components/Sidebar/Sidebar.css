@@ -1,0 +1,97 @@
+/* Sidebar container */
+.sidebar {
+  width: 270px;
+  background-color: #ffffff;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  transition: width 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* Sidebar links */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-link .icon {
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+.sidebar-link:hover {
+  background-color: #e5e7eb;
+}
+
+.sidebar-link.active {
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Scrollbar style */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* --- 📱 MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  /* Sidebar hidden off-screen by default */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -270px;
+    width: 270px;
+    height: 100vh;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    background-color: #ffffff;
+  }
+
+  /* Sidebar when opened via mobile menu */
+  .sidebar.mobile-active {
+    transform: translateX(270px);
+  }
+
+  /* 👇 Add margin-top to avoid navbar overlap */
+  .sidebar,
+  .sidebar.mobile-active {
+    margin-top: 60px; /* same height as navbar */
+    height: calc(100vh - 60px);
+  }
+}
